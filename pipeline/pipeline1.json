@@ -39,7 +39,13 @@
 				"inputs": [
 					{
 						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_name_table": {
+								"value": "@pipeline().parameters.table_name_par",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
@@ -50,6 +56,14 @@
 				]
 			}
 		],
+		"parameters": {
+			"schema_par": {
+				"type": "string"
+			},
+			"table_name_par": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
