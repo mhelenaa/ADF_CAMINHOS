@@ -1,0 +1,32 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ds_name_table": {
+				"type": "string",
+				"defaultValue": "Product"
+			},
+			"ds_schema_table": {
+				"type": "string",
+				"defaultValue": "SalesTL"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().ds_schema_table",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().ds_name_table",
+				"type": "Expression"
+			}
+		}
+	}
+}
